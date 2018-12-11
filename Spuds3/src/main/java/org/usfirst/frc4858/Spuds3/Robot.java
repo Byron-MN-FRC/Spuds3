@@ -20,6 +20,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4858.Spuds3.commands.*;
 import org.usfirst.frc4858.Spuds3.subsystems.*;
 
+import com.ctre.phoenix.sensors.PigeonIMU;
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the TimedRobot
@@ -110,5 +112,17 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+		PigeonIMU.GeneralStatus genStatus = new PigeonIMU.GeneralStatus();
+		PigeonIMU.FusionStatus fusionStatus = new PigeonIMU.FusionStatus();
+		double [] xyz_dps = new double [3];
+		/* grab some input data from Pigeon and gamepad*/
+		PigeonIMU _pidgey = subSystemPIDDriveTrain.pigeonIMU1;
+		_pidgey.getGeneralStatus(genStatus);
+		_pidgey.getRawGyro(xyz_dps);
+
+        
+        SmartDashboard.putNumberArray("gyro", subSystemPIDDriveTrain.xyz_dps);
+        SmartDashboard.putString("hello", "world");
     }
 }

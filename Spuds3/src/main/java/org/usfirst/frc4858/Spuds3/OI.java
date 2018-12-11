@@ -69,8 +69,8 @@ public class OI {
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
         SmartDashboard.putData("CommandDriveStraight: Stop", new CommandDriveStraight(0));
-        SmartDashboard.putData("CommandDriveStraight: OneFourth", new CommandDriveStraight(0.25));
-        SmartDashboard.putData("CommandDriveStraight: OneHalf", new CommandDriveStraight(0.5));
+        SmartDashboard.putData("CommandDriveStraight: OneFourth", new CommandDriveStraight(025));
+        SmartDashboard.putData("CommandDriveStraight: OneHalf", new CommandDriveStraight(05));
         SmartDashboard.putData("CommandRotateTo: paramPreset1", new CommandRotateTo(0, 0));
         SmartDashboard.putData("CommandRotateTo: paramPreset2", new CommandRotateTo(90, .25));
         SmartDashboard.putData("CommandRotateTo: paramPreset3", new CommandRotateTo(0, .25));
